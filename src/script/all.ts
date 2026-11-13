@@ -1,0 +1,25 @@
+// Every pack in one file, for a page with no build step that wants more than controls. Exposed as `window.DeviceUI`.
+export * from './index.js';
+import 'device-ui/appliance';
+import 'device-ui/audio';
+import 'device-ui/brass';
+import 'device-ui/camera';
+import 'device-ui/clockwork';
+import 'device-ui/computer';
+import 'device-ui/gamepad';
+import 'device-ui/guitar';
+import 'device-ui/keyboard';
+import 'device-ui/lab';
+import 'device-ui/library';
+import 'device-ui/light';
+import 'device-ui/masonry';
+import 'device-ui/office';
+import 'device-ui/phone';
+import 'device-ui/pocket';
+import 'device-ui/cards';
+import 'device-ui/screen';
+import 'device-ui/sewing';
+import 'device-ui/synth';
+import 'device-ui/tool';
+import 'device-ui/vault';
+import 'device-ui/watch';

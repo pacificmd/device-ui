@@ -1,0 +1,129 @@
+{
+  "name": "device-ui",
+  "version": "0.1.0",
+  "description": "Real DOM controls, drawn as lit physical objects",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airierpasture/device-ui.git"
+  },
+  "type": "module",
+  "sideEffects": [
+    "./src/base/**",
+    "./src/materials/**",
+    "./src/packs/**",
+    "./src/print/**",
+    "./src/react/**",
+    "./dist/*.js",
+    "./dist/base/**",
+    "./dist/materials/**",
+    "./dist/packs/**",
+    "./dist/print/**",
+    "./dist/react/**"
+  ],
+  "files": [
+    "dist",
+    "tools",
+    "parts.json",
+    "README.md"
+  ],
+  "bin": {
+    "device-ui": "./tools/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/base/index.ts",
+    "./materials": "./src/materials/index.ts",
+    "./materials/catalogue": "./src/materials/catalogue.ts",
+    "./controls": "./src/packs/controls/index.ts",
+    "./sound": "./src/sound/index.ts",
+    "./air": "./src/air/index.ts",
+    "./hand": "./src/hand/index.ts",
+    "./print": "./src/print/index.ts",
+    "./react": "./src/react/index.ts",
+    "./script": "./dist/device-ui.global.js",
+    "./script/all": "./dist/device-ui.all.global.js",
+    "./parts.json": "./parts.json",
+    "./*": "./src/packs/*.ts"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/base/index.d.ts",
+        "import": "./dist/base/index.js"
+      },
+      "./materials": {
+        "types": "./dist/materials/index.d.ts",
+        "import": "./dist/materials/index.js"
+      },
+      "./materials/catalogue": {
+        "types": "./dist/materials/catalogue.d.ts",
+        "import": "./dist/materials/catalogue.js"
+      },
+      "./controls": {
+        "types": "./dist/packs/controls/index.d.ts",
+        "import": "./dist/packs/controls/index.js"
+      },
+      "./sound": {
+        "types": "./dist/sound/index.d.ts",
+        "import": "./dist/sound/index.js"
+      },
+      "./air": {
+        "types": "./dist/air/index.d.ts",
+        "import": "./dist/air/index.js"
+      },
+      "./hand": {
+        "types": "./dist/hand/index.d.ts",
+        "import": "./dist/hand/index.js"
+      },
+      "./print": {
+        "types": "./dist/print/index.d.ts",
+        "import": "./dist/print/index.js"
+      },
+      "./react": {
+        "types": "./dist/react/index.d.ts",
+        "import": "./dist/react/index.js"
+      },
+      "./script": "./dist/device-ui.global.js",
+      "./script/all": "./dist/device-ui.all.global.js",
+      "./parts.json": "./parts.json",
+      "./*": {
+        "types": "./dist/packs/*.d.ts",
+        "import": "./dist/packs/*.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsup && tsc -p . --noEmit false --emitDeclarationOnly --outDir dist --rootDir src",
+    "typecheck": "tsc -p .",
+    "prepack": "node scripts/only-pnpm.mjs && pnpm build",
+    "prepublishOnly": "node scripts/only-pnpm.mjs",
+    "test": "tsc -p . && vitest run"
+  },
+  "peerDependencies": {
+    "playwright": ">=1.40",
+    "react": ">=19"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "react": "^19.3.1",
+    "tsup": "^9.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "homepage": "https://github.com/airierpasture/device-ui",
+  "bugs": "https://github.com/airierpasture/device-ui/issues",
+  "packageManager": "pnpm@10.28.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

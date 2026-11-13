@@ -1,6 +1,6 @@
 {
   "name": "device-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Real DOM controls, drawn as lit physical objects",
   "license": "MIT",
   "repository": {
